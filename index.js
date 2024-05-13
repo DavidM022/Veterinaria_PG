@@ -52,16 +52,7 @@ app.delete('/eliminar_reserva/:ci', (req, res) => {
     console.log(LReserva);
 });
 
-//endpoint 6 
-app.get('/libros/publicacion/:anio', (req, res) => {
-    const year =  parseInt(req.params.anio);
-    const librosPublicados = librosBiblicos.filter( x => x.anioPublicacion === year);
-    if (librosPublicados.length > 0) {
-        res.json(librosPublicados);
-    } else {
-        res.status(404).json({mensaje : 'no se han encontrado libros publicados en ese anio'});
-    }
-});
+
 
 app.listen(PORT, () => {
     console.log("Servidor corriendo en el puerto http://localhost:" + PORT);
